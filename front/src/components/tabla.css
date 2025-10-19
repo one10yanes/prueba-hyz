@@ -1,0 +1,127 @@
+/* ...existing code... */
+.tabla-container{
+  overflow:hidden;
+  border-radius:8px;
+  border:1px solid var(--border);
+  background:var(--surface);
+}
+.proyectos-table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:14px;
+  background:var(--surface);
+}
+.proyectos-table th, .proyectos-table td{
+  padding:10px 12px;
+  border-bottom:1px solid var(--border);
+  text-align:left;
+  vertical-align:middle;
+}
+.proyectos-table th{
+  background:var(--primary);
+  color:#fff;
+  font-weight:600;
+  font-size:14px;
+  border-bottom:0;
+}
+.proyectos-table tbody tr:hover{
+  background:#f8fafc;
+}
+.proyectos-table tbody tr:last-child td{
+  border-bottom:0;
+}
+
+/* descripción: truncar */
+.proyectos-table td.descripcion{
+  max-width:200px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+/* estado */
+.proyectos-table td.estadoCell{text-align:center;min-width:120px}
+.estado{
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
+  padding:4px 8px;
+  border-radius:12px;
+  font-size:12px;
+  font-weight:500;
+  color:#fff;
+}
+.estado.en-progreso{background:var(--primary)}
+.estado.finalizado{background:var(--success)}
+.estado.pendiente{background:#64748b}
+
+/* acciones: compact and spaced */
+.acciones{
+  display:flex;
+  gap:6px;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:nowrap;
+}
+.acciones .btn{
+  padding:6px 8px;
+  font-size:12px;
+  white-space:nowrap;
+  min-width:auto;
+}
+
+/* mobile responsive */
+@media(max-width:900px){
+  .tabla-container{
+    border-radius:8px;
+  }
+}
+
+@media(max-width:700px){
+  /* Convert table to cards */
+  .proyectos-table, 
+  .proyectos-table thead, 
+  .proyectos-table tbody { 
+    display: block; 
+  }
+  .proyectos-table thead{
+    display:none;
+  }
+  .proyectos-table tr { 
+    display: block; 
+    margin-bottom: 12px; 
+    border: 1px solid var(--border); 
+    border-radius:8px; 
+    padding:16px; 
+    background:var(--surface);
+    box-shadow:0 1px 3px rgba(0,0,0,0.1);
+  }
+  .proyectos-table td { 
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:8px 0; 
+    border-bottom: 1px solid #f1f5f9;
+  }
+  .proyectos-table td:last-child{
+    border-bottom:0;
+  }
+  .proyectos-table td::before { 
+    content: attr(data-label);
+    font-weight:600; 
+    color:#64748b;
+    min-width:100px;
+  }
+  .proyectos-table td.descripcion{
+    max-width:none;
+    white-space:normal;
+  }
+  .acciones{
+    justify-content:flex-start;
+    margin-top:8px;
+  }
+  .acciones .btn{
+    padding:8px 12px;
+    font-size:14px;
+  }
+}

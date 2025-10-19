@@ -117,8 +117,8 @@ Sigue estos pasos **en orden** para instalar y configurar el proyecto:
 ### PASO 1: Clonar el repositorio
 
 ```bash
-git clone <URL_DEL_REPOSITORIO>
-cd prueba-HYZ
+git clone https://github.com/one10yanes/prueba-hyz.git
+cd prueba-hyz
 ```
 
 ---
